@@ -3,6 +3,8 @@
 
 // C program for implementation of Bubble sort
 #include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
 
 // swapping the elements
 void swap(int *xp, int *yp)
@@ -23,19 +25,22 @@ class Solution
     void bubbleSort(int arr[], int n)
     {
         // Your code here  
+        if(n==1)
+        return;
+        int count=0;
         for(int i=0;i<n-1;i++)
         {
-            for(int j=0;j<n-i-1;j++)
+            if(arr[i]>arr[i+1])
             {
-                if(arr[j]>arr[j+1])
-                {
-                    int temp=arr[j];
-                    arr[j]=arr[j+1];
-                    arr[j+1]=temp;
-                }
+                int temp=arr[i];
+                arr[i]=arr[i+1];
+                arr[i+1]=temp;
+                count++;
             }
         }
-        
+        if(count==0)
+        return;
+        bubbleSort(arr,n-1);
     }
 };
 
