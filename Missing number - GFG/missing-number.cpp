@@ -23,10 +23,12 @@ int main()
 // } Driver Code Ends
 
 
-int missingNumber(int A[], int n)
+int missingNumber(int A[], int N)
 {
     // Your code goes here
-   int total=n*(n+1)/2;
-   int sum= accumulate(A,A+n-1,0);
-   return (total-sum);
+    int s1=N*(N+1)/2,s2=0;
+    for(int i=0;i<N-1;i++)
+    s2+=A[i];
+    int num=s1-s2;
+    return num;
 }
