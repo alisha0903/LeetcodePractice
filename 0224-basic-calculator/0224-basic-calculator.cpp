@@ -25,11 +25,10 @@ public:
                 sum = 0;
                 sign = 1;
             } else if (s[i] == ')') {
-                int prevSign = st.top();
+                sum = st.top() * sum;
                 st.pop();
-                int prevSum = st.top();
+                sum += st.top();
                 st.pop();
-                sum = prevSum + (prevSign * sum);
             }
         }
 
