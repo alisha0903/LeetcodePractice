@@ -1,8 +1,9 @@
 class Solution {
 public:
-    bool isPowerOfTwo(int x) {
-        if(x<=0)
-            return false;
-       return x && (!(x & (x - 1)));
+    bool isPowerOfTwo(int n) {
+        if(n == 0) return 0;
+        while(n % 2 == 0) 
+            n /= 2;
+        return n == 1; 
     }
 };
